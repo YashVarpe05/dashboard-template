@@ -1,17 +1,11 @@
 "use client"
 
-import type React from "react"
-
 import { useState, useEffect } from "react"
 import { Sidebar } from "./sidebar"
 import { TopNavbar } from "./top-navbar"
 import { cn } from "@/lib/utils"
 
-interface DashboardLayoutProps {
-  children: React.ReactNode
-}
-
-export function DashboardLayout({ children }: DashboardLayoutProps) {
+export function DashboardLayout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
