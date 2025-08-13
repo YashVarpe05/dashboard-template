@@ -1,5 +1,3 @@
-import type React from "react"
-import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -16,17 +14,13 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "KYC Dashboard",
   description: "Know Your Customer Dashboard for managing KYC applications and data",
   generator: "v0.app",
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} antialiased`} suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans antialiased">

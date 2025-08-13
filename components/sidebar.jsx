@@ -3,12 +3,6 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { LayoutDashboard, FileText, CreditCard, Receipt, FileCheck, Bell, Menu, X } from "lucide-react"
 
-interface SidebarProps {
-  collapsed: boolean
-  onToggle: () => void
-  isMobile?: boolean
-}
-
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", active: true },
   { icon: FileText, label: "Applications", active: false },
@@ -18,7 +12,7 @@ const menuItems = [
   { icon: Bell, label: "Notices", active: false },
 ]
 
-export function Sidebar({ collapsed, onToggle, isMobile = false }: SidebarProps) {
+export function Sidebar({ collapsed, onToggle, isMobile = false }) {
   return (
     <div
       className={cn(

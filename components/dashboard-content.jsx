@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -82,7 +80,7 @@ export function DashboardContent() {
   )
 }
 
-function DashboardCards({ viewType, stats, charts, categories, loading }: any) {
+function DashboardCards({ viewType, stats, charts, categories, loading }) {
   if (loading) {
     return <DashboardSkeleton />
   }
@@ -269,7 +267,7 @@ function DashboardCards({ viewType, stats, charts, categories, loading }: any) {
                       paddingAngle={5}
                       dataKey="value"
                     >
-                      {charts?.pieChart.map((entry: any, index: number) => (
+                      {charts?.pieChart.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
@@ -278,7 +276,7 @@ function DashboardCards({ viewType, stats, charts, categories, loading }: any) {
                 </ResponsiveContainer>
               </div>
               <div className="flex flex-col justify-center space-y-4">
-                {charts?.pieChart.map((item: any, index: number) => (
+                {charts?.pieChart.map((item, index) => (
                   <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="w-4 h-4 rounded-full" style={{ backgroundColor: item.color }}></div>
@@ -383,14 +381,7 @@ function DashboardSkeleton() {
   )
 }
 
-interface StatusCardProps {
-  title: string
-  count: number
-  icon: React.ReactNode
-  color: "blue" | "yellow" | "green" | "orange" | "red"
-}
-
-function StatusCard({ title, count, icon, color }: StatusCardProps) {
+function StatusCard({ title, count, icon, color }) {
   const colorClasses = {
     blue: "text-blue-600 bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800",
     yellow: "text-yellow-600 bg-yellow-50 border-yellow-200 dark:bg-yellow-950 dark:border-yellow-800",
